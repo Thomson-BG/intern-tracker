@@ -1,0 +1,7 @@
+{
+  "name": "Intern Time & Absence Tracker",
+  "description": "A modern React-based application for interns to track their work hours and log absences, featuring geolocation for check-ins and an admin panel for comprehensive oversight. The app will request location permissions from your browser to verify check-in/out locations.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

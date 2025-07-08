@@ -1,0 +1,279 @@
+{
+    "projectId": "686cc4ed002aec037736",
+    "endpoint": "https://nyc.cloud.appwrite.io/v1",
+    "projectName": "Intern Time Tracker + GPS",
+    "settings": {
+        "services": {
+            "account": true,
+            "avatars": true,
+            "databases": true,
+            "locale": true,
+            "health": true,
+            "storage": true,
+            "teams": true,
+            "users": true,
+            "sites": true,
+            "functions": true,
+            "graphql": true,
+            "messaging": true
+        },
+        "auth": {
+            "methods": {
+                "jwt": true,
+                "phone": true,
+                "invites": true,
+                "anonymous": true,
+                "email-otp": true,
+                "magic-url": true,
+                "email-password": true
+            },
+            "security": {
+                "duration": 31536000,
+                "limit": 0,
+                "sessionsLimit": 10,
+                "passwordHistory": 0,
+                "passwordDictionary": false,
+                "personalDataCheck": false,
+                "sessionAlerts": false,
+                "mockNumbers": []
+            }
+        }
+    },
+    "databases": [
+        {
+            "$id": "686d4fff002269d3350d",
+            "name": "interntracker",
+            "enabled": true
+        }
+    ],
+    "collections": [
+        {
+            "$id": "686d5052000baf2c0bd0",
+            "$permissions": [],
+            "databaseId": "686d4fff002269d3350d",
+            "name": "interngps",
+            "enabled": true,
+            "documentSecurity": false,
+            "attributes": [],
+            "indexes": []
+        },
+        {
+            "$id": "timeLogsCollection",
+            "$permissions": [],
+            "databaseId": "686d4fff002269d3350d",
+            "name": "TimeLogs",
+            "enabled": true,
+            "documentSecurity": false,
+            "attributes": [
+                {
+                    "key": "firstname",
+                    "type": "string",
+                    "required": true,
+                    "array": false,
+                    "size": 45,
+                    "default": null
+                },
+                {
+                    "key": "lastname",
+                    "type": "string",
+                    "required": true,
+                    "array": false,
+                    "size": 45,
+                    "default": null
+                },
+                {
+                    "key": "emplyeeId",
+                    "type": "string",
+                    "required": true,
+                    "array": false,
+                    "size": 15,
+                    "default": null
+                },
+                {
+                    "key": "deviceName",
+                    "type": "string",
+                    "required": false,
+                    "array": false,
+                    "size": 150,
+                    "default": null
+                },
+                {
+                    "key": "action",
+                    "type": "string",
+                    "required": true,
+                    "array": false,
+                    "size": 20,
+                    "default": null
+                },
+                {
+                    "key": "timestamp",
+                    "type": "string",
+                    "required": true,
+                    "array": false,
+                    "size": 50,
+                    "default": null
+                },
+                {
+                    "key": "rawTimestamp",
+                    "type": "integer",
+                    "required": true,
+                    "array": false,
+                    "min": -9223372036854775808,
+                    "max": 9223372036854775807,
+                    "default": null
+                },
+                {
+                    "key": "latitude",
+                    "type": "double",
+                    "required": false,
+                    "array": false,
+                    "min": -1.7976931348623157e+308,
+                    "max": 1.7976931348623157e+308,
+                    "default": null
+                },
+                {
+                    "key": "longitude",
+                    "type": "double",
+                    "required": false,
+                    "array": false,
+                    "min": -1.7976931348623157e+308,
+                    "max": 1.7976931348623157e+308,
+                    "default": null
+                },
+                {
+                    "key": "accuracy",
+                    "type": "double",
+                    "required": false,
+                    "array": false,
+                    "min": -1.7976931348623157e+308,
+                    "max": 1.7976931348623157e+308,
+                    "default": null
+                },
+                {
+                    "key": "deviceId",
+                    "type": "string",
+                    "required": true,
+                    "array": false,
+                    "size": 255,
+                    "default": null
+                },
+                {
+                    "key": "userAgent",
+                    "type": "string",
+                    "required": true,
+                    "array": false,
+                    "size": 500,
+                    "default": null
+                },
+                {
+                    "key": "duration",
+                    "type": "string",
+                    "required": false,
+                    "array": false,
+                    "size": 75,
+                    "default": null
+                }
+            ],
+            "indexes": []
+        },
+        {
+            "$id": "absenceLogsCollection",
+            "$permissions": [],
+            "databaseId": "686d4fff002269d3350d",
+            "name": "AbsenceLogs",
+            "enabled": true,
+            "documentSecurity": true,
+            "attributes": [
+                {
+                    "key": "firstName",
+                    "type": "string",
+                    "required": true,
+                    "array": false,
+                    "size": 40,
+                    "default": null
+                },
+                {
+                    "key": "lastName",
+                    "type": "string",
+                    "required": true,
+                    "array": false,
+                    "size": 40,
+                    "default": null
+                },
+                {
+                    "key": "employeeId",
+                    "type": "string",
+                    "required": true,
+                    "array": false,
+                    "size": 10,
+                    "default": null
+                },
+                {
+                    "key": "deviceName",
+                    "type": "string",
+                    "required": false,
+                    "array": false,
+                    "size": 255,
+                    "default": null
+                },
+                {
+                    "key": "date",
+                    "type": "string",
+                    "required": true,
+                    "array": false,
+                    "size": 50,
+                    "default": null
+                },
+                {
+                    "key": "reason",
+                    "type": "string",
+                    "required": true,
+                    "array": false,
+                    "size": 255,
+                    "default": null
+                },
+                {
+                    "key": "submitted",
+                    "type": "string",
+                    "required": true,
+                    "array": false,
+                    "size": 50,
+                    "default": null
+                }
+            ],
+            "indexes": []
+        }
+    ],
+    "sites": [
+        {
+            "$id": "686d5c9a00247df31b46",
+            "name": "intern-time-tracker",
+            "framework": "react",
+            "adapter": "static",
+            "buildRuntime": "node-22",
+            "installCommand": "npm install",
+            "buildCommand": "npm run build",
+            "outputDirectory": "./dist",
+            "fallbackFile": "index.html",
+            "specification": "s-0.5vcpu-512mb",
+            "enabled": true,
+            "timeout": 30,
+            "logging": true,
+            "path": "sites/intern-time-tracker",
+            "vars": [
+                {
+                    "key": "VITE_APPWRITE_ENDPOINT",
+                    "value": "https://cloud.appwrite.io/v1"
+                },
+                {
+                    "key": "VITE_APPWRITE_PROJECT_ID",
+                    "value": "686cc4ed002aec037736"
+                },
+                {
+                    "key": "VITE_APPWRITE_PROJECT_NAME",
+                    "value": "Intern Time Tracker + GPS"
+                }
+            ]
+        }
+    ]
+}
