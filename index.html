@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intern Time Clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Intern Time Clock</h1>
+            <div id="clock"></div>
+        </div>
+        <div class="tabs">
+            <button class="tab-link active" onclick="openTab(event, 'ClockInOut')">Clock In/Out</button>
+            <button class="tab-link" onclick="openTab(event, 'ReportAbsence')">Report Absence</button>
+            <button class="tab-link" onclick="openTab(event, 'FAQ')">FAQ</button>
+        </div>
+
+        <div id="ClockInOut" class="tab-content" style="display: block;">
+            <form id="clock-in-out-form">
+                <input type="text" id="firstName" placeholder="First Name" required>
+                <input type="text" id="lastName" placeholder="Last Name" required>
+                <input type="text" id="employeeId" placeholder="Employee ID" required>
+                <div class="buttons">
+                    <button type="submit" id="checkInBtn" name="action" value="checkIn">Check In</button>
+                    <button type="submit" id="checkOutBtn" name="action" value="checkOut">Check Out</button>
+                </div>
+            </form>
+            <div id="live-map" class="map-container"></div>
+        </div>
+
+        <div id="ReportAbsence" class="tab-content">
+            <form id="absence-form">
+                <input type="text" id="absenceFirstName" placeholder="First Name" required>
+                <input type="text" id="absenceLastName" placeholder="Last Name" required>
+                <input type="text" id="absenceEmployeeId" placeholder="Employee ID" required>
+                <textarea id="reason" placeholder="Reason for absence" required></textarea>
+                <div class="buttons">
+                    <button type="submit">Submit Absence</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="FAQ" class="tab-content">
+            <div class="faq-item">
+                <button class="faq-question">What is this application for?</button>
+                <div class="faq-answer">
+                    <p>This application is for interns to clock in and out of their internship sites and to report absences.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">How do I clock in or out?</button>
+                <div class="faq-answer">
+                    <p>Navigate to the "Clock In/Out" tab, fill in your first name, last name, and employee ID, and then click the "Check In" or "Check Out" button.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">What if I forget to clock out?</button>
+                <div class="faq-answer">
+                    <p>Please contact your supervisor immediately to get your time sheet corrected.</p>
+                </div>
+            </div>
+             <div class="faq-item">
+                <button class="faq-question">How do I report an absence?</button>
+                <div class="faq-answer">
+                    <p>Navigate to the "Report Absence" tab, fill in your information and the reason for your absence, and click "Submit Absence."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modal" class="hidden">
+        <div class="modal-content">
+            <p id="modal-text"></p>
+            <button id="modal-close-btn">Close</button>
+        </div>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
